@@ -1,5 +1,3 @@
 # Libraries
 
-## Let's build it
-
-TODO
+* There are many more libraries out there.
