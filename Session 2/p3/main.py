@@ -1,14 +1,27 @@
-# Note to future EG volunteers: avoid connecting to the API over the VPN; slowness may be observed.
-
-import requests
 import json
 
-api_key = "ca3c26eb1b4d3b51c8f1de0195429c46"
+# some JSON:
+x =  '''
+    {
+        "name":"John",
+        "age":30,
+        "city":"New York",
+        "favorite_icecream_flavours": [
+            "Chocolate Fudge Brownie",
+            "Caramel Chew Chew"
+        ]
+    }
+'''
 
-response = requests.get("https://api.themoviedb.org/3/genre/movie/list?api_key=" + api_key)
+print(type(x)) # What will this print?
 
-json_response = json.loads(response.text)
+# parse x:
+# john = json.loads(x)
+# print(type(john)) # What will this print
 
-print(json_response)
+# the result is a Python dictionary:
+# print(john["city"]) # What would happen here?
+# print(john["phone"]) # What would happen here?
+# print(john["favorite_icecream_flavours"]) # What would happen here?
 
-# print("\nThere are " + str(len(json_response['genres'])) + " available genres in the database.\n")
+# What if we copied x into a variable without it being a string?
